@@ -32,7 +32,7 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev gcc-multilib
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/big3lar/rt-n56u.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         mkdir -p toolchain-3.4.x
         wget https://github.com/hanwckf/padavan-toolchain/releases/download/v1.1/mipsel-linux-uclibc.tar.xz
@@ -74,7 +74,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config #SS plus+
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config #SS server
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
-        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config #adbyby plus+
+        echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config #adbyby plus+
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config #内网穿透FRPC
         echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config #内网穿透FRPS
         echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> .config #TUNSAFE
@@ -89,8 +89,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_KUMASOCKS=n" >> .config #可以不集成
         echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
-        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config
         #echo "CONFIG_FIRMWARE_INCLUDE_IPT2SOCKS=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_MICROSOCKS=y" >> .config
         #########################################################################################
